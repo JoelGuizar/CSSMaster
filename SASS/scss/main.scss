@@ -1,7 +1,14 @@
 
-//$ to make variables, _ for partials
-@import "variables";
-
+//$ to make variables, _ for partials, @mixin for mixin
+//mixins are group of code
+//you can use mixins inside of other mixins
+//you can add a (), and include arguments, to make the mixin like a function
+//you can set an arguments default calue like @mixin name($radius: 6px)
+@import "partials/variables";
+//just 'variables' works, but added the partials folder, so we used the
+//relative path syntax;
+//interpolation is used like #{} in strings, not ${}
+@import "partials/mixins";
 
 body {
   font-family: sans-serif;
@@ -20,7 +27,15 @@ a {
   color: $link-color;
 }
 
+@include fancy-links
+
+.warning-button {
+  @include warning;
+  padding: 8px 12px;
+}
+
 #header {
+  @include box(8px, 1px solid #999);
   height: $header-height;
   background-color: $theme-color;
   #main-menu {
