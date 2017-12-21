@@ -16,7 +16,13 @@ body {
   font-family: sans-serif;
   color: $text-color;
 
-  @media only screen and (max-width: 960px) {
+  // @media only screen and (max-width: 960px) {
+  //   font-size: 125%;
+  // }
+
+  //equivalent to..
+
+  @include large-screens {
     font-size: 125%;
   }
 }
